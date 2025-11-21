@@ -41,7 +41,6 @@ main {
     background-color: #ffffff;
     padding: 40px;
     margin: 30px auto;
-    max-width: 1200px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
