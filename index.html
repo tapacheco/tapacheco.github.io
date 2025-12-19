@@ -241,6 +241,70 @@
             opacity: 0.8;
         }
 
+        .pdf-container {
+            margin: 2rem 0;
+            border: 2px solid #7a63b3;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: white;
+        }
+
+        .pdf-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 2px solid #7a63b3;
+        }
+
+        .pdf-controls h3 {
+            margin: 0;
+            color: #4b2e91;
+            font-size: 1.3rem;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 600px;
+            border: none;
+            display: block;
+        }
+
+        .pdf-fallback {
+            padding: 1rem;
+            text-align: center;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+        }
+
+        .pdf-fallback a {
+            color: #7a63b3;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .pdf-fallback a:hover {
+            text-decoration: underline;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #4b2e91 0%, #7a63b3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(75, 46, 145, 0.3);
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -258,6 +322,16 @@
                 flex-direction: column;
                 text-align: center;
             }
+
+            .pdf-viewer {
+                height: 400px;
+            }
+            
+            .pdf-controls {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -272,7 +346,7 @@
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#cv">CV</a></li>
+            <li><a href="#cv-viewer">CV</a></li>
             <li><a href="#publications">Publications</a></li>
             <li><a href="#links">Links</a></li>
         </ul>
@@ -304,18 +378,27 @@
         </section>
 
         <!-- CV Section -->
-        <section id="cv">
+        <section id="cv-viewer">
             <h2>Curriculum Vitae</h2>
                     
             <!-- PDF Viewer -->
             <div class="pdf-container">
                 <div class="pdf-controls">
                     <h3>View CV</h3>
-                    <a href="CV_ThaysePacheco.pdf" download="Thayse_Pacheco_CV.pdf" class="download-btn">📥 Download PDF</a>
+                    <a href="docs/cv.pdf" download="Thayse_Pacheco_CV.pdf" class="download-btn">📥 Download PDF</a>
                 </div>
-                <iframe src="CV_ThaysePacheco.pdf" class="pdf-viewer" title="CV PDF Viewer"></iframe>
+                <iframe src="docs/cv.pdf" class="pdf-viewer" title="CV PDF Viewer"></iframe>
+                <div class="pdf-fallback">
+                    <p>Your browser does not support PDF viewing. <a href="docs/cv.pdf" download="Thayse_Pacheco_CV.pdf">Click here to download the PDF</a>.</p>
+                </div>
             </div>
   
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <p>For a complete list of my publications, please visit my <a href="https://ui.adsabs.harvard.edu/public-libraries/DdqYhQmoQPSSfqRUAzGIqg" target="_blank" style="color: #7a63b3; font-weight: 600;">ADS Library</a>.</p>
         </section>
 
         <!-- Links Section -->
