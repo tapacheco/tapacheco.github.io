@@ -3,30 +3,444 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tapacheco</title>
+    <title>Thayse Adineia Pacheco - Postdoc researcher</title>
     <style>
-        body {
-            background-color: #f5f5f5; /* Light grey background for subtlety */
-            color: #19001F; /* Subtle purple text color */
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
-            color: #180029; /* Slightly darker shade of purple for headings */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
         }
-        a {
-            color: #1B0042; /* Lighter shade of purple for links */
+
+        header {
+            background: linear-gradient(135deg, #4b2e91 0%, #7a63b3 100%);
+            color: white;
+            padding: 2rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size:  1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index:  100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: #4b2e91;
             text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s, color 0.3s;
         }
-        a:hover {
-            text-decoration: underline;
+
+        nav a:hover {
+            background-color: #4b2e91;
+            color: white;
+        }
+
+        section {
+            background: white;
+            margin:  2rem auto;
+            padding: 2.5rem;
+            border-radius: 8px;
+            box-shadow:  0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        section h2 {
+            color:  #4b2e91;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #7a63b3;
+        }
+
+        .intro-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            flex: 0 0 200px;
+            text-align: center;
+        }
+
+        .profile-photo img {
+            width: 200px;
+            height: 200px;
+            border-radius:  50%;
+            object-fit: cover;
+            border: 4px solid #7a63b3;
+        }
+
+        .profile-photo-placeholder {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4b2e91 0%, #7a63b3 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 4rem;
+            font-weight:  bold;
+        }
+
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+
+        . cv-section h3 {
+            color: #4b2e91;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .cv-item {
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #7a63b3;
+        }
+
+        .cv-item h4 {
+            color: #333;
+            font-size: 1.2rem;
+            margin-bottom:  0.3rem;
+        }
+
+        . cv-item . date {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        . cv-item p {
+            color: #555;
+        }
+
+        .publication {
+            margin-bottom: 1.5rem;
+            padding:  1rem;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #7a63b3;
+        }
+
+        .publication h4 {
+            color: #4b2e91;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication . authors {
+            color: #555;
+            margin-bottom: 0.3rem;
+        }
+
+        . publication .venue {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        . publication a {
+            color: #7a63b3;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .publication a:hover {
+            text-decoration:  underline;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .link-card {
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow:  0 5px 15px rgba(75, 46, 145, 0.2);
+            border-color: #7a63b3;
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: #4b2e91;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .link-card p {
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top:  3rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav a {
+                border-bottom: 1px solid #eee;
+            }
+
+            . intro-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Tapacheco's Site</h1>
-    <p>This is a more professional and subtle purple color scheme for the website.</p>
-    <a href="#">Learn more</a>
+    <header>
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Your Professional Title | Researcher | Academic</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#cv">CV</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#links">Links</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="intro-content">
+                <div class="profile-photo">
+                    <!-- Replace with your photo:  <img src="your-photo.jpg" alt="Your Name"> -->
+                    <div class="profile-photo-placeholder">YN</div>
+                </div>
+                <div class="intro-text">
+                    <p>
+                        Welcome!  I am [Your Name], a [your position/title] at [your institution/organization]. 
+                        My research focuses on [your research areas], with particular interests in [specific topics]. 
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        I hold a [Your Degree] from [Your University], where I specialized in [your specialization]. 
+                        My work combines [methodologies/approaches] to address [key challenges or questions in your field].
+                    </p>
+                    <p style="margin-top: 1rem;">
+                        Beyond research, I am passionate about [teaching/mentoring/community involvement/other interests], 
+                        and I actively contribute to [professional communities/open source/etc.].
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv">
+            <h2>Curriculum Vitae</h2>
+            
+            <div class="cv-section">
+                <h3>Education</h3>
+                <div class="cv-item">
+                    <h4>Ph.D. in [Field]</h4>
+                    <div class="date">[University Name] | [Year - Year]</div>
+                    <p>Dissertation: "[Your Dissertation Title]"</p>
+                    <p>Advisor: [Advisor Name]</p>
+                </div>
+                <div class="cv-item">
+                    <h4>M.S./M.A. in [Field]</h4>
+                    <div class="date">[University Name] | [Year - Year]</div>
+                    <p>Thesis:  "[Your Thesis Title]"</p>
+                </div>
+                <div class="cv-item">
+                    <h4>B.S./B.A. in [Field]</h4>
+                    <div class="date">[University Name] | [Year - Year]</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Professional Experience</h3>
+                <div class="cv-item">
+                    <h4>[Job Title]</h4>
+                    <div class="date">[Organization/Institution] | [Start Date - Present/End Date]</div>
+                    <p>
+                        • [Key responsibility or achievement]<br>
+                        • [Key responsibility or achievement]<br>
+                        • [Key responsibility or achievement]
+                    </p>
+                </div>
+                <div class="cv-item">
+                    <h4>[Previous Job Title]</h4>
+                    <div class="date">[Organization/Institution] | [Start Date - End Date]</div>
+                    <p>
+                        • [Key responsibility or achievement]<br>
+                        • [Key responsibility or achievement]
+                    </p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Awards & Honors</h3>
+                <div class="cv-item">
+                    <h4>[Award Name]</h4>
+                    <div class="date">[Organization] | [Year]</div>
+                    <p>[Brief description if needed]</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h3>Skills</h3>
+                <p>
+                    <strong>Technical: </strong> [List your technical skills]<br>
+                    <strong>Languages:</strong> [Languages you speak]<br>
+                    <strong>Tools:</strong> [Software, tools, methodologies]
+                </p>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            
+            <div class="publication">
+                <h4>[Paper Title]</h4>
+                <div class="authors"><strong>Your Name</strong>, Co-author 1, Co-author 2</div>
+                <div class="venue">[Conference/Journal Name], [Year]</div>
+                <p>[Brief description of the paper's contribution]</p>
+                <a href="[paper-link]" target="_blank">PDF</a> | 
+                <a href="[doi-link]" target="_blank">DOI</a> | 
+                <a href="[code-link]" target="_blank">Code</a>
+            </div>
+
+            <div class="publication">
+                <h4>[Paper Title]</h4>
+                <div class="authors">Co-author 1, <strong>Your Name</strong>, Co-author 2</div>
+                <div class="venue">[Conference/Journal Name], [Year]</div>
+                <p>[Brief description of the paper's contribution]</p>
+                <a href="[paper-link]" target="_blank">PDF</a> | 
+                <a href="[doi-link]" target="_blank">DOI</a>
+            </div>
+
+            <div class="publication">
+                <h4>[Paper Title]</h4>
+                <div class="authors"><strong>Your Name</strong>, Co-author 1</div>
+                <div class="venue">[Conference/Journal Name], [Year]</div>
+                <p>[Brief description of the paper's contribution]</p>
+                <a href="[paper-link]" target="_blank">PDF</a>
+            </div>
+
+            <p style="margin-top: 2rem; color: #666;">
+                For a complete list of publications, please visit my 
+                <a href="[google-scholar-link]" style="color: #7a63b3;">Google Scholar profile</a>.
+            </p>
+        </section>
+
+        <!-- Links Section -->
+        <section id="links">
+            <h2>Links & Profiles</h2>
+            <div class="links-grid">
+                <div class="link-card">
+                    <a href="[your-github-url]" target="_blank">GitHub</a>
+                    <p>View my code and open source contributions</p>
+                </div>
+                <div class="link-card">
+                    <a href="[your-scholar-url]" target="_blank">Google Scholar</a>
+                    <p>Complete publication list and citations</p>
+                </div>
+                <div class="link-card">
+                    <a href="[your-linkedin-url]" target="_blank">LinkedIn</a>
+                    <p>Professional network and experience</p>
+                </div>
+                <div class="link-card">
+                    <a href="[your-orcid-url]" target="_blank">ORCID</a>
+                    <p>Research profile and academic identity</p>
+                </div>
+                <div class="link-card">
+                    <a href="[your-researchgate-url]" target="_blank">ResearchGate</a>
+                    <p>Research publications and collaborations</p>
+                </div>
+                <div class="link-card">
+                    <a href="mailto:[your-email]">Email</a>
+                    <p>Get in touch:  [your-email]</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Your Name. All rights reserved. </p>
+            <p>Last updated: December 2025</p>
+        </div>
+    </footer>
 </body>
 </html>
