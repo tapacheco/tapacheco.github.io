@@ -3,30 +3,348 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tapacheco</title>
+    <title>Thayse Adineia Pacheco - Postdoc Researcher</title>
     <style>
-        body {
-            background-color: #f5f5f5; /* Light grey background for subtlety */
-            color: #19001F; /* Subtle purple text color */
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            box-sizing: border-box;
         }
-        h1 {
-            color: #180029; /* Slightly darker shade of purple for headings */
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
         }
-        a {
-            color: #1B0042; /* Lighter shade of purple for links */
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #4b2e91 0%, #7a63b3 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: #4b2e91;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #7a63b3;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Section Styles */
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        section h2 {
+            color: #4b2e91;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #7a63b3;
+            padding-bottom: 0.5rem;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .profile-photo {
+            flex: 0 0 200px;
+            width: 200px;
+            height: 200px;
+            background-color: #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-style: italic;
+            border: 5px solid #7a63b3;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Publications Section */
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .publication-item h3 {
+            color: #4b2e91;
+            margin-bottom: 0.5rem;
+        }
+
+        .publication-item p {
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+
+        .publication-item a {
+            color: #7a63b3;
             text-decoration: none;
         }
-        a:hover {
+
+        .publication-item a:hover {
             text-decoration: underline;
+        }
+
+        /* Links Section */
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .link-item {
+            padding: 1rem;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .link-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(75, 46, 145, 0.2);
+        }
+
+        .link-item a {
+            color: #4b2e91;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .link-item a:hover {
+            color: #7a63b3;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #4b2e91;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0.5rem;
+            }
+
+            nav ul li a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-photo {
+                flex: 0 0 150px;
+                width: 150px;
+                height: 150px;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .container {
+                padding: 1rem 0.5rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .links-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to Tapacheco's Site</h1>
-    <p>This is a more professional and subtle purple color scheme for the website.</p>
-    <a href="#">Learn more</a>
+    <!-- Header -->
+    <header>
+        <h1>Thayse Adineia Pacheco</h1>
+        <p>Postdoc Researcher</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="cv.pdf">CV</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#links">Links</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- About Section -->
+        <section id="about">
+            <h2>About</h2>
+            <div class="about-content">
+                <div class="profile-photo">
+                    Photo Placeholder
+                </div>
+                <div class="about-text">
+                    <p>Welcome to my personal website. I am a postdoctoral researcher with a passion for advancing knowledge in my field through rigorous research and collaboration.</p>
+                    <p>My research interests span multiple areas, and I am committed to contributing to both academic and practical applications of my work. I enjoy working with interdisciplinary teams and exploring innovative approaches to complex problems.</p>
+                    <p>Feel free to explore my publications and connect with me through the links provided below.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications">
+            <h2>Publications</h2>
+            <div class="publication-item">
+                <h3>Publication Title 1</h3>
+                <p><em>Authors, Journal Name, Year</em></p>
+                <p>Brief description of the publication and its significance.</p>
+                <a href="#">View Publication</a>
+            </div>
+            <div class="publication-item">
+                <h3>Publication Title 2</h3>
+                <p><em>Authors, Journal Name, Year</em></p>
+                <p>Brief description of the publication and its significance.</p>
+                <a href="#">View Publication</a>
+            </div>
+            <div class="publication-item">
+                <h3>Publication Title 3</h3>
+                <p><em>Authors, Journal Name, Year</em></p>
+                <p>Brief description of the publication and its significance.</p>
+                <a href="#">View Publication</a>
+            </div>
+        </section>
+
+        <!-- Links & Profiles Section -->
+        <section id="links">
+            <h2>Links & Profiles</h2>
+            <div class="links-grid">
+                <div class="link-item">
+                    <a href="#">Google Scholar</a>
+                </div>
+                <div class="link-item">
+                    <a href="#">ResearchGate</a>
+                </div>
+                <div class="link-item">
+                    <a href="#">LinkedIn</a>
+                </div>
+                <div class="link-item">
+                    <a href="#">ORCID</a>
+                </div>
+                <div class="link-item">
+                    <a href="#">GitHub</a>
+                </div>
+                <div class="link-item">
+                    <a href="#">Email</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Thayse Adineia Pacheco. All rights reserved.</p>
+    </footer>
 </body>
 </html>
