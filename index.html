@@ -241,6 +241,24 @@
             opacity: 0.8;
         }
 
+        .download-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #4b2e91 0%, #7a63b3 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(75, 46, 145, 0.3);
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2rem;
@@ -307,6 +325,7 @@
         <!-- CV Section -->
         <section id="cv">
             <h2>Curriculum Vitae</h2>
+            <a href="docs/cv.pdf" class="download-btn" download>Download CV (PDF)</a>
             
             <div class="cv-section">
                 <h3>Education</h3>
@@ -370,6 +389,7 @@
         <!-- Publications Section -->
         <section id="publications">
             <h2>Publications</h2>
+            <a href="docs/publications.pdf" class="download-btn" download>Download Publications (PDF)</a>
             
             <div class="publication">
                 <h4>[Paper Title]</h4>
